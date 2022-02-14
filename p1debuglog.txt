@@ -1,0 +1,164 @@
+gcc -g p1final.c
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) br main
+Breakpoint 1 at 0x81c: file p1final.c, line 18.
+(gdb) r
+Starting program: /home/runner/IA1-Revision/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p1final.c:18
+18  {
+(gdb) n
+20    input(&a,&b);
+(gdb) s
+input (a=0x7fff23ec4aec, b=0x7fff23ec4af0) at p1final.c:4
+4     printf("enter the first number\n");
+(gdb) n
+enter the first number
+5     scanf("%d",a);
+(gdb) n
+n
+6     printf("enter the 2nd number\n");
+(gdb) n
+enter the 2nd number
+7     scanf("%d",b);
+(gdb) n
+8   }
+(gdb) n
+main () at p1final.c:21
+21    add(a,b,&sum);
+(gdb) s
+ 
+ gcc -g p1final.c
+p1final.c: In function ‘output’:
+p1final.c:16:1: error: expected ‘;’ before ‘}’ token
+ }
+ ^
+p1final.c: In function ‘main’:
+p1final.c:21:7: warning: passing argument 1 of ‘add’ makes integer from pointer without a cast [-Wint-conversion]
+   add(&sum,a,b);
+ 
+ gcc -g p1final.c
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) br main
+Breakpoint 1 at 0x81c: file p1final.c, line 18.
+(gdb) r
+Starting program: /home/runner/IA1-Revision/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p1final.c:18
+18  {
+(gdb) n
+20    input(&a,&b);
+(gdb) s
+input (a=0x7fff7afe6d6c, b=0x7fff7afe6d70) at p1final.c:4
+4     printf("enter the first number\n");
+(gdb) n
+enter the first number
+5     scanf("%d",a);
+(gdb) n
+n
+6     printf("enter the 2nd number\n");
+(gdb) n
+enter the 2nd number
+7     scanf("%d",b);
+(gdb) n
+8   }
+(gdb) n
+main () at p1final.c:21
+21    add(a,b,&sum);
+ 
+ gcc -g p1final.c
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) br main
+Breakpoint 1 at 0x81c: file p1final.c, line 18.
+(gdb) r
+Starting program: /home/runner/IA1-Revision/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p1final.c:18
+18  {
+(gdb) n
+20    input(&a,&b);
+(gdb) s
+input (a=0x7fff23ec4aec, b=0x7fff23ec4af0) at p1final.c:4
+4     printf("enter the first number\n");
+(gdb) n
+enter the first number
+5     scanf("%d",a);
+(gdb) n
+n
+6     printf("enter the 2nd number\n");
+(gdb) n
+enter the 2nd number
+7     scanf("%d",b);
+(gdb) n
+8   }
+(gdb) n
+main () at p1final.c:21
+21    add(a,b,&sum);
+(gdb) s
+add (a=21873, b=602688480, sum=0x7fff23ec4af4) at p1final.c:11
+11    *sum = a+b;
+(gdb) n
+12  }
+(gdb) n
+main () at p1final.c:22
+22    output(a,b,sum);
+(gdb) s
+output (a=21873, b=602688480, sum=602710353) at p1final.c:15
+15    printf("the sum of %d and %d is %d",a,b,sum);
+(gdb) n
+16  }
+(gdb) n
+main () at p1final.c:23
+23    return 0;
+(gdb) c
+Continuing.
+(gdb) the sum of 21873 and 602688480 is 602710353[Inferior 1 (process 202) exited normally]
+(gdb) q
